@@ -1,0 +1,39 @@
+spring:
+    datasource:
+        username: root
+        password: 123456
+        driver-class-name: com.mysql.jdbc.Driver
+        url: jdbc:mysql:///shixun?useSSL=false
+#        //根据resources目录下的schema.sql自动建表，可省略
+#        schema: classpath:schema.sql
+#        //根据resources目录下的data.sql自动插入假数据,可省略
+#        data: classpath:data.sql
+
+    jpa:
+        database: mysql
+    jackson:
+      time-zone: GMT+8
+
+mybatis:
+    configuration:
+    #配置驼峰属性自动映射
+    #实体中属性为phoneNumber,数据库属性为phone_number，Mybatis默认是不能自动转换的
+      map-underscore-to-camel-case: true
+#      配置日志输出
+      log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
+#logging:
+#  level:
+#    #你的mapper的包
+#    com.chenwenhui.springboot.myspringboot.mapper: debug
+
+
+#支付宝配置
+alipay:
+  app_id: 2016091700531264
+  merchant_private_key: MIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQDahSx7wnhTUleHaSrXrQG7mTZJpU7RL/kqxLwFeBVUXrhFOYDA1jwW1iKvqdEkCx86/flg3dSbencd/jZqgoTiRSVQeRUPFko3vqY5wwTuU9r0ThCCxsGL5W6c9FEKa52ZL+boXXEmlfUtSDWVS3dVxuAPtkdhKJ6oL6YiPIlWMzEWZkqaydrOO3yKOgQXb31B2/szEvnR4WpNlsLFmjnMhWR6MLT8e8A/NXktqkk+Ew+1juri/JrQCWLMWmbhuFTbEpDT5KRp733sddAg0Pnlrv/T9Tai/Okl85ywlBSBGR7odzz/EUHIfv4EnVo9wVYG/HO/K/SOxRVI8yrlnlqJAgMBAAECggEBAKUFdTZxAhVKVbd5AFWn3WsipRCwufjX1b8qmyM2MEVq0pXUexslrnNAeylVgQ9LJuaR7cXtQCW6MkKAO+/raRbHSQqgpfqixqGaZEWytQKWaP+eBHH+TyOqvAHjr1/DLV0GA8bu6ghNrr3nji+UsiYg7gxvhzAkUMyKT1gDh2OEGAkQTczd/0mDAyE+OGe2fyZ6c/481/NWDCTzCyrI7WPsF3YWnOxxhbw/TbL3Jx2Ek4ex6JFrf6aFnoJfNf37jD7vi9iDMi/xsrsrM6ZjxwlrwMfB/PWBr7+6fb5RcMxRbHGp7GaU3BUFLan7eSCUOX9JMzd/nJebInV6HOTziJECgYEA7xahhT6TcoJ4Tb1DyXDoZjjSWyXN/R5hBp09F5qXBA/rlfv6yQlbudup1m+wumP2ZSc9StROcCjorFyA1M2vwOb1qWxbc/zaZcJVD+kxoFF7M1f/Wr1jD6D0Hs4mBH6LFxI94hG/jKVlHGGSrK8mIZtU+E2QzeML/o2YadUELAcCgYEA6foZBwESvJclSuA89d3Ba+wVbTEUdQ4ij94fCC6Hhd2Sxm7o6vYiGnhK2Dbs59ECh3F4INt+DmvC0KwR+GKbYlil0T6yyIDsxqlM+NFFXF2rUJK0jpSF5df0RSCGhd9+fQKc7S77vyQ2O9m9odibsMq7hKBp0zswusgI3ueswO8CgYEAih9T3qtA+WVgZODTWXut9ugatmeHshQrz2tlUM6RMdqUqkgxIJUUdbHuUyChQ3zeap+ZrDIswmUPzgt+rfHJ+DI1d9ROnRpVfXYgOBnq/og0GXxb3CsPIIdGoMlNc0k7x29VatYACBvA5v2Dg9mHuOCI3Q3KevcRBdT9WR6j018CgYAL15murhI5s1iy2nibZRbmFHPdK+/CIO4E5BQkAN7hGp7UJkbppX2CY3Y+TUFeVkjPfCG9X/6YUkHw99SNAsikiKIT3h2EYmoZf/YiXc0p6J/EGzjCQqgoQu7dFNFaMz6eqyQwKQGa4gVQsCuV5nWy0//7rXbNtyA3Q+qXBZjLxwKBgHMHYpRi9+ffcsBhzfzgLCrRe/N6zezEm5IILvQi4a9TUztWH7hMfhb+u2G06tWsSW8/fAKkfEZ99vYn3IjNyqKZPb7sidHNXIS7TiuM31IAc7ggRL3txYXiRy+DQ5EDmfqYhWHp3g62mDjhJSBhGUcUOvT2IWaon3G1a2WgTue0
+  alipay_public_key: MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAvZLYEYcnG9AW9y2mf6kKKQneel4eSqWeCUpEK612pf2khGKQpBCnqT+fs0cwKix+Btm9Xu47wZbwOWs6GoO0lyOuIekBGoHxjBm73YR5UR7hbXioE/0w4eaypc24h5uC2Hxyii4Sh3pBCYnd9X+odRu4rOHXGZXByH9rDN11O5B6EozqF3YHc9oKhfQ7pUMazbAG1s8qu9ZRK0RnxNCl7dgROs5+OuVfuarX4nxKLwXpjuY6SUqNvaz/vaaSaMqtTOCbyfdvPJreT1CN7XNbMSQXpvoWzWzfs9+RI2dCj5CJ3ye1YdoVVjIQFqAvrRZQxY7zCBKeGvoTttECtOyAYQIDAQAB
+  gatewayUrl: https://openapi.alipaydev.com/gateway.do
+  sysServiceProviderId: 1234
+  notify_url: http://工程公网访问地址/alipay.trade.page.pay-JAVA-UTF-8/notify_url.jsp
+  return_url: http://工程公网访问地址/alipay.trade.page.pay-JAVA-UTF-8/return_url.jsp
