@@ -9,10 +9,10 @@ spring:
 #        //根据resources目录下的data.sql自动插入假数据,可省略
 #        data: classpath:data.sql
 
-    jpa:
-        database: mysql
-    jackson:
-      time-zone: GMT+8
+#    jpa:
+#        database: mysql
+#    jackson:
+#      time-zone: GMT+8
 
 mybatis:
     configuration:
